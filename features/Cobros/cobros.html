@@ -29,6 +29,27 @@
 
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body * {
+                visibility: hidden;
+            }
+
+            #facturaModal,
+            #facturaModal * {
+                visibility: visible;
+            }
+
+            #facturaModal {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
         .container {
             padding: 2rem;
         }
@@ -164,7 +185,8 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content" id="facturaArea">
                             <div class="modal-header flex-column align-items-start">
-                                <h5 class="modal-title" id="facturaModalLabel">Factura de Compra</h5>
+                                <h5 class="modal-title" id="facturaModalLabel">Factura de Compra - Centro Turístico
+                                    Paraíso del Rio</h5>
                                 <div id="infoFactura" class="mt-2 text-secondary">
 
                                 </div>
@@ -172,9 +194,9 @@
                             <div class="modal-body" id="facturaContenido">
                                 
                             </div>
-                            <div class="modal-footer d-flex justify-content-between">
+                            <div class="modal-footer d-flex justify-content-between no-print">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Imprimir
+                                <button type="button" class="btn btn-primary" onclick="window.print()">Imprimir
                                     Factura</button>
                             </div>
                         </div>
@@ -189,6 +211,20 @@
 
     <script>
         document.getElementById("checkout").addEventListener("click", function () {
+
+            const metodo = document.getElementById("paymentMethod").value;
+            const totalValidacion = document.getElementById("total").textContent;
+
+            if (metodo === "seleccione") {
+                alert("Por favor seleccione un método de pago antes de continuar.");
+                return;
+            }
+
+            if (totalValidacion === "₡0") {
+                alert("No se puede realizar el pago porque el total de la orden es 0.");
+                return;
+            }
+            
             // Mostrar mensaje
             alert("✅ Pago completado con éxito");
 
@@ -225,11 +261,14 @@
             // 🍽 Mesa seleccionada
             const mesa = 3
 
+            const cajero = "Jairell Bonilla"
+
             // Insertar info en el encabezado de la factura
             document.getElementById("infoFactura").innerHTML = `
     <p class="mb-0"><strong>Número de Factura:</strong> ${numeroFactura}</p>
     <p class="mb-0"><strong>Fecha:</strong> ${fecha}</p>
     <p class="mb-2"><strong>Mesa:</strong> ${mesa}</p>
+    <p class="mb-2"><strong>Cajero:</strong> ${cajero}</p>
   `;
             // Insertar contenido al modal
             document.getElementById("facturaContenido").innerHTML = contenido;
@@ -399,5 +438,6 @@
 
     <script src="/assets/js/script.js"></script>
 </body>
+
 
 </html>
