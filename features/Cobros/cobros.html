@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dreams Pos admin template</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.jpg">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/animate.css">
+
+    <link rel="stylesheet" href="/assets/plugins/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/plugins/owlcarousel/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .container {
+            padding: 2rem;
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .order-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <div id="header" data-activeHeader></div>
+        <!-- End header-->
+
+        <!-- Nav Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu" data-active="cobros" data-submenu="cobros"></div>
+            </div>
+        </div>
+        <!-- End Nav Menu -->
+
+
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="page-title">Caja</h3>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item">Sistema de cobros</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Productos -->
+                    <div class="col-md-8">
+                        <h6><strong>Productos</strong></h6>
+                        <ul class="nav nav-tabs mb-3" id="productTabs" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="main-tab" data-bs-toggle="tab"
+                                    data-bs-target="#main" type="button" role="tab">Plato fuerte</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks"
+                                    type="button" role="tab">Bebidas</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="desserts-tab" data-bs-toggle="tab"
+                                    data-bs-target="#desserts" type="button" role="tab">Postres</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="main" role="tabpanel">
+                                <div class="row" id="mainProducts"></div>
+                            </div>
+                            <div class="tab-pane fade" id="drinks" role="tabpanel">
+                                <div class="row" id="drinkProducts"></div>
+                            </div>
+                            <div class="tab-pane fade" id="desserts" role="tabpanel">
+                                <div class="row" id="dessertProducts"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orden -->
+                    <div class="col-md-4">
+                        <h6><strong>Orden</strong></h6>
+                        <div class="mb-2">
+                            <button id="selectAll" class="btn btn-sm btn-outline-primary">Seleccionar todos</button>
+                            <button id="clearSelection" class="btn btn-sm btn-outline-danger">Limpiar</button>
+                        </div>
+                        <ul class="list-group mb-3" id="orderList"></ul>
+
+                        <div class="mb-3">
+                            <label>Mesa</label>
+                            <select class="form-select" id="mesa">
+                                <option value="ninguno">-- Ninguno --</option>
+                                <option value="mesa3">3</option>
+                                <option value="mesa4">4</option>
+                                <option value="mesa5">5</option>
+                                <option value="mesa7">7</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Método de pago</label>
+                            <select class="form-select" id="paymentMethod">
+                                <option value="seleccione">-- Seleccione --</option>
+                                <option value="cash">Efectivo</option>
+                                <option value="card">Tarjeta</option>
+                                <option value="sinpe">Sinpe</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 d-none" id="cashSection">
+                            <label>Monto recibido</label>
+                            <input type="number" class="form-control" id="cashReceived" min="0">
+                            <div class="form-text" id="changeText"></div>
+                        </div>
+
+                        <div class="mb-2">Subtotal: <span id="subtotal">₡0</span></div>
+                        <div class="mb-2">Impuesto (13%): <span id="tax">₡0</span></div>
+                        <div class="fw-bold mb-3">Total: <span id="total">₡0</span></div>
+
+                        <button class="btn btn-success w-100" id="checkout">Checkout</button>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="facturaModal" tabindex="-1" aria-labelledby="facturaModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" id="facturaArea">
+                            <div class="modal-header flex-column align-items-start">
+                                <h5 class="modal-title" id="facturaModalLabel">Factura de Compra</h5>
+                                <div id="infoFactura" class="mt-2 text-secondary">
+
+                                </div>
+                            </div>
+                            <div class="modal-body" id="facturaContenido">
+                                
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Imprimir
+                                    Factura</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        document.getElementById("checkout").addEventListener("click", function () {
+            // Mostrar mensaje
+            alert("✅ Pago completado con éxito");
+
+            // Aquí puedes obtener tus datos reales de la orden
+            const productos = [
+                { nombre: "Hamburguesa x1", precio: 2500 },
+                { nombre: "Pizza x1", precio: 3500 }
+            ];
+
+            let subtotal = productos.reduce((acc, p) => acc + p.precio, 0);
+            let impuesto = subtotal * 0.13;
+            let total = subtotal + impuesto;
+
+            // Crear HTML de la factura
+            let contenido = "<ul class='list-group'>";
+            productos.forEach(p => {
+                contenido += `<li class="list-group-item d-flex justify-content-between">
+                      <span>${p.nombre}</span>
+                      <span>₡${p.precio}</span>
+                    </li>`;
+            });
+            contenido += "</ul>";
+            contenido += `<hr>
+                  <p><strong>Subtotal:</strong> ₡${subtotal}</p>
+                  <p><strong>Impuesto (13%):</strong> ₡${impuesto.toFixed(2)}</p>
+                  <p><strong>Total:</strong> ₡${total.toFixed(2)}</p>`;
+
+            // 🔢 Número de factura aleatorio
+            const numeroFactura = Math.floor(100000 + Math.random() * 900000);
+
+            // 📅 Fecha actual
+            const fecha = new Date().toLocaleString('es-CR');
+
+            // 🍽 Mesa seleccionada
+            const mesa = 3
+
+            // Insertar info en el encabezado de la factura
+            document.getElementById("infoFactura").innerHTML = `
+    <p class="mb-0"><strong>Número de Factura:</strong> ${numeroFactura}</p>
+    <p class="mb-0"><strong>Fecha:</strong> ${fecha}</p>
+    <p class="mb-2"><strong>Mesa:</strong> ${mesa}</p>
+  `;
+            // Insertar contenido al modal
+            document.getElementById("facturaContenido").innerHTML = contenido;
+
+            // Mostrar modal (Bootstrap 5)
+            let facturaModal = new bootstrap.Modal(document.getElementById('facturaModal'));
+            facturaModal.show();
+        });
+    </script>
+
+    <script>
+        const products = [
+            { id: 1, name: 'Hamburguesa', price: 2500, category: 'main' },
+            { id: 2, name: 'Pizza', price: 3500, category: 'main' },
+            { id: 3, name: 'Refresco', price: 1200, category: 'drinks' },
+            { id: 4, name: 'Jugo natural', price: 1500, category: 'drinks' },
+            { id: 5, name: 'Postre', price: 1800, category: 'desserts' },
+            { id: 6, name: 'Brownie', price: 1600, category: 'desserts' },
+        ];
+
+        let order = [];
+
+        function renderProducts() {
+            document.getElementById('mainProducts').innerHTML = '';
+            document.getElementById('drinkProducts').innerHTML = '';
+            document.getElementById('dessertProducts').innerHTML = '';
+
+            products.forEach(prod => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 mb-3';
+                col.innerHTML = `
+          <div class="card product-card" onclick="addToOrder(${prod.id})">
+            <div class="card-body text-center">
+              <h6>${prod.name}</h6>
+              <p class="text-muted">₡${prod.price}</p>
+            </div>
+          </div>
+        `;
+                if (prod.category === 'main') {
+                    document.getElementById('mainProducts').appendChild(col);
+                } else if (prod.category === 'drinks') {
+                    document.getElementById('drinkProducts').appendChild(col);
+                } else if (prod.category === 'desserts') {
+                    document.getElementById('dessertProducts').appendChild(col);
+                }
+            });
+        }
+
+        function addToOrder(id) {
+            const existing = order.find(item => item.id === id);
+            if (existing) {
+                existing.qty++;
+                existing.selected = true;
+            } else {
+                const prod = products.find(p => p.id === id);
+                order.push({ ...prod, qty: 1, selected: true });
+            }
+            renderOrder();
+        }
+
+        function renderOrder() {
+            const orderList = document.getElementById('orderList');
+            orderList.innerHTML = '';
+            let subtotal = 0;
+            order.forEach((item, i) => {
+                if (item.selected) subtotal += item.price * item.qty;
+                const li = document.createElement('li');
+                li.className = 'list-group-item order-item';
+                li.innerHTML = `
+          <div>
+            <input type="checkbox" ${item.selected ? 'checked' : ''} onchange="toggleSelect(${i})">
+            ${item.name} (₡${item.price}) x ${item.qty}
+          </div>
+          <div class="d-flex align-items-center gap-1">
+            <button class="btn btn-sm btn-outline-secondary" onclick="changeQty(${i}, -1)">-</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="changeQty(${i}, 1)">+</button>
+            <button class="btn btn-sm btn-outline-danger" onclick="removeItem(${i})">
+              <i>X</i>
+            </button>
+          </div>
+        `;
+                orderList.appendChild(li);
+            });
+            const tax = subtotal * 0.13;
+            const total = subtotal + tax;
+            document.getElementById('subtotal').textContent = `₡${subtotal}`;
+            document.getElementById('tax').textContent = `₡${tax.toFixed(0)}`;
+            document.getElementById('total').textContent = `₡${total.toFixed(0)}`;
+            updateChange();
+        }
+
+        function toggleSelect(index) {
+            order[index].selected = !order[index].selected;
+            renderOrder();
+        }
+
+        function changeQty(index, delta) {
+            order[index].qty += delta;
+            if (order[index].qty < 1) order[index].qty = 1;
+            order[index].selected = true;
+            renderOrder();
+        }
+
+        function removeItem(index) {
+            order.splice(index, 1);
+            renderOrder();
+        }
+
+        document.getElementById('selectAll').onclick = () => {
+            order.forEach(item => item.selected = true);
+            renderOrder();
+        };
+
+        document.getElementById('clearSelection').onclick = () => {
+            order.forEach(item => item.selected = false);
+            renderOrder();
+        };
+
+        const paymentMethod = document.getElementById('paymentMethod');
+        const cashSection = document.getElementById('cashSection');
+        const cashReceived = document.getElementById('cashReceived');
+        const changeText = document.getElementById('changeText');
+
+        paymentMethod.addEventListener('change', () => {
+            if (paymentMethod.value === 'cash') {
+                cashSection.classList.remove('d-none');
+            } else {
+                cashSection.classList.add('d-none');
+                changeText.textContent = '';
+            }
+        });
+
+        cashReceived.addEventListener('input', updateChange);
+
+        function updateChange() {
+            const selected = order.filter(i => i.selected);
+            const total = selected.reduce((acc, item) => acc + item.price * item.qty, 0) * 1.13;
+            const efectivo = parseFloat(cashReceived.value);
+            if (!isNaN(efectivo)) {
+                const cambio = efectivo - total;
+                changeText.textContent = cambio >= 0 ? `Cambio: ₡${cambio.toFixed(0)}` : 'Dinero insuficiente';
+            } else {
+                changeText.textContent = '';
+            }
+        }
+
+        renderProducts();
+    </script>
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="/assets/js/feather.min.js"></script>
+
+    <script src="/assets/js/jquery.slimscroll.min.js"></script>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="/assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="/assets/plugins/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
