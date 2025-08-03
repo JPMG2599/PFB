@@ -51,6 +51,13 @@ body {
 .submenu.active.bg-transparent {
   background: transparent !important;
 }
+.text-inverted {
+  color: var(--color-text-inverted) !important;
+}
+
+.text-brand-accent:hover {
+  color: var(--color-text-primary) !important;
+}
 
 /** Btn colors **/
 .btn-brand-primary {

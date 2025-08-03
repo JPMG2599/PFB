@@ -2,7 +2,7 @@
   <!-- Nav Items -->
   <ul>
     <!-- Dashboard Link-->
-    <li data-link="dashboard">
+    <li data-link="dashboard-admin">
       <a href="/features/Dashboard/dashboard.html">
         <img src="/assets/img/icons/dashboard.svg" alt="img" /><span>
           Dashboard</span
@@ -10,7 +10,7 @@
       </a>
     </li>
     <!-- End Dashboard Link-->
-    
+
     <!-- Orden Link-->
     <li data-link="orden">
       <a href="/features/Ordenes/index.html">
@@ -43,12 +43,17 @@
 
     <!-- Cobros Link-->
     <li class="submenu">
-      <a href="javascript:void(0);"  data-link="cobros" data-submenu>
-        <img src="/assets/img/icons/sales1.svg" alt="img">
-        <span>Cobros</span> 
-        <span class="menu-arrow"></span></a>
+      <a href="javascript:void(0);" data-link="cobros" data-submenu>
+        <img src="/assets/img/icons/sales1.svg" alt="img" />
+        <span>Cobros</span>
+        <span class="menu-arrow"></span
+      ></a>
       <ul>
-        <li><a href="/features/Cobros/listaCobros.html" id="lista_cobros">Lista de órdenes</a></li>
+        <li>
+          <a href="/features/Cobros/listaCobros.html" id="lista_cobros"
+            >Lista de órdenes</a
+          >
+        </li>
         <li><a href="/features/Cobros/cobros.html" id="cobros">Caja</a></li>
       </ul>
     </li>
@@ -57,13 +62,15 @@
     <!-- Report Link-->
     <li class="submenu">
       <a href="javascript:void(0);" data-link="reportes" data-submenu>
-        <img src="/assets/img/icons/purchase1.svg" alt="img" />
+        <i data-feather="bar-chart-2" style="color: #6e6b7b"></i>
         <span>Reportes</span>
         <span class="menu-arrow"></span>
       </a>
       <ul>
         <li>
-          <a href="/features/Reportes/daily_report.html" id="daily_report">Reporte Diario</a>
+          <a href="/features/Reportes/daily_report.html" id="daily_report"
+            >Reporte Diario</a
+          >
         </li>
         <li>
           <a href="/features/Reportes/consolidated.html" id="consolidated"
@@ -99,7 +106,7 @@
     <!-- Users Admin Link-->
     <li data-link="users">
       <a href="/features/Usuarios/index.html">
-        <img src="/assets/img/icons/purchase1.svg" alt="img" /><span>
+        <img src="/assets/img/icons/users1.svg" alt="img" /><span>
           Usuarios (Admin)</span
         >
       </a>

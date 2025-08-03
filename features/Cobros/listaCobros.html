@@ -1,125 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Lista Cobros</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords"
-        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Dreams Pos admin template</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/img/favicon.jpg"
+    />
 
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.jpg">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css" />
 
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/animate.css" />
 
-    <link rel="stylesheet" href="/assets/plugins/owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="/assets/plugins/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css" />
 
-    <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/owlcarousel/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/owlcarousel/owl.theme.default.min.css"
+    />
 
-    <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css" />
 
-    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="/assets/css/bootstrap-datetimepicker.min.css"
+    />
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
 
-<body>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
 
+  <body>
     <div id="global-loader">
-        <div class="whirly-loader"> </div>
+      <div class="whirly-loader"></div>
     </div>
 
     <div class="main-wrapper">
+      <!-- Header -->
+      <div id="header" data-activeHeader></div>
+      <!-- End header-->
 
-
-        <!-- Header -->
-        <div id="header" data-activeHeader></div>
-        <!-- End header-->
-
-        <!-- Nav Menu -->
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu" data-active="lista_cobros" data-submenu="lista_cobros"></div>
-            </div>
+      <!-- Nav Menu -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+          <div
+            id="sidebar-menu"
+            class="sidebar-menu"
+            data-active="cobros"
+            data-submenu="lista_cobros"
+          ></div>
         </div>
-        <!-- End Nav Menu -->
+      </div>
+      <!-- End Nav Menu -->
 
-        <div class="page-wrapper">
-            <div class="content">
-                <div class="page-header">
-                    <div class="page-title">
-                        <h4>Lista de Órdenes</h4>
-                        <small>Historial de órdenes realizadas por los meseros</small>
-                    </div>
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="page-header">
+            <div class="page-title">
+              <h4>Lista de Cobros</h4>
+              <small>Historial de cobros realizados</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="table-top">
+                <div class="search-set">
+                  <div class="search-input">
+                    <a class="btn btn-searchset"
+                      ><img src="/assets/img/icons/search-white.svg" alt="img"
+                    /></a>
+                  </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table id="tabla-ordenes" class="table table-striped table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Fecha</th>
-                                        <th>Mesa</th>
-                                        <th>Monto</th>
-                                        <th>Estado</th>
-                                        <th>Cobrador</th>
-                                        <th>Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>2025-08-01 12:30</td>
-                                        <td>3</td>
-                                        <td>₡12,500</td>
-                                        <td><span class="badge bg-warning">Pendiente</span></td>
-                                        <td></td>
-                                        <td>
-                                            <a href="/features/Cobros/cobros.html" class="btn btn-primary btn-sm">Cobrar</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2025-08-01 13:10</td>
-                                        <td>4</td>
-                                        <td>₡8,900</td>
-                                        <td><span class="badge bg-success">Pagado</span></td>
-                                        <td>Laura R.</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2025-08-01 13:40</td>
-                                        <td>5</td>
-                                        <td>₡10,200</td>
-                                        <td><span class="badge bg-warning">Pendiente</span></td>
-                                        <td></td>
-                                        <td>
-                                            <a href="/features/Cobros/cobros.html" class="btn btn-primary btn-sm">Cobrar</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2025-08-01 14:00</td>
-                                        <td>7</td>
-                                        <td>₡15,750</td>
-                                        <td><span class="badge bg-success">Pagado</span></td>
-                                        <td>Andrés M.</td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="wordset">
+                  <ul>
+                    <li>
+                      <a
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="pdf"
+                        ><img src="/assets/img/icons/pdf.svg" alt="img"
+                      /></a>
+                    </li>
+                    <li>
+                      <a
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="excel"
+                        ><img src="/assets/img/icons/excel.svg" alt="img"
+                      /></a>
+                    </li>
+                    <li>
+                      <a
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="print"
+                        ><img src="/assets/img/icons/printer.svg" alt="img"
+                      /></a>
+                    </li>
+                  </ul>
                 </div>
+              </div>
 
+              <div class="card" id="filter_inputs">
+                <div class="card-body pb-0">
+                  <div class="row">
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter Name" />
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter Reference No" />
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="form-group">
+                        <select class="select">
+                          <option>Completed</option>
+                          <option>Paid</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="form-group">
+                        <a class="btn btn-filters ms-auto"
+                          ><img
+                            src="/assets/img/icons/search-whites.svg"
+                            alt="img"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <!-- Table Head-->
+                  <thead>
+                    <tr>
+                      <th>
+                        <label class="checkboxs">
+                          <input type="checkbox" id="select-all" />
+                          <span class="checkmarks"></span>
+                        </label>
+                      </th>
+                      <th>Fecha</th>
+                      <th>Mesa</th>
+                      <th>Monto</th>
+                      <th>Estado</th>
+                      <th>Cobrador</th>
+                      <th class="text-center">Accion</th>
+                    </tr>
+                  </thead>
+                  <!-- End Table Head-->
+
+                  <!-- Table Content -->
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label class="checkboxs">
+                          <input type="checkbox" />
+                          <span class="checkmarks"></span>
+                        </label>
+                      </td>
+                      <td>2025-08-01 12:30</td>
+                      <td>3</td>
+                      <td>₡12,500</td>
+                      <td><span class="badge bg-warning">Pendiente</span></td>
+                      <td></td>
+                      <td class="text-center">
+                        <a
+                          class="action-set"
+                          href="javascript:void(0);"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="true"
+                        >
+                          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a
+                              href="/features/Cobros/cobros.html"
+                              class="dropdown-item"
+                              ><img
+                                src="/assets/img/icons/dollar-square.svg"
+                                class="me-2"
+                                alt="img"
+                              />Cobrar</a
+                            >
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="checkboxs">
+                          <input type="checkbox" />
+                          <span class="checkmarks"></span>
+                        </label>
+                      </td>
+                      <td>2025-08-01 13:10</td>
+                      <td>4</td>
+                      <td>₡8,900</td>
+                      <td><span class="badge bg-success">Pagado</span></td>
+                      <td>Laura R.</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="checkboxs">
+                          <input type="checkbox" />
+                          <span class="checkmarks"></span>
+                        </label>
+                      </td>
+                      <td>2025-08-01 13:40</td>
+                      <td>5</td>
+                      <td>₡10,200</td>
+                      <td><span class="badge bg-warning">Pendiente</span></td>
+                      <td></td>
+                      <td class="text-center">
+                        <a
+                          class="action-set"
+                          href="javascript:void(0);"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="true"
+                        >
+                          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a
+                              href="/features/Cobros/cobros.html"
+                              class="dropdown-item"
+                              ><img
+                                src="/assets/img/icons/dollar-square.svg"
+                                class="me-2"
+                                alt="img"
+                              />Cobrar</a
+                            >
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="checkboxs">
+                          <input type="checkbox" />
+                          <span class="checkmarks"></span>
+                        </label>
+                      </td>
+                      <td>2025-08-01 14:00</td>
+                      <td>7</td>
+                      <td>₡15,750</td>
+                      <td><span class="badge bg-success">Pagado</span></td>
+                      <td>Andrés M.</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                  <!-- End Table Content -->
+                </table>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- Script to load components -->
+    <script src="/assets/js/layout.js" defer></script>
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
 
@@ -139,26 +317,25 @@
     <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-    <script src="/assets/js/script.js"></script>
-   <script>
-    $(document).ready(function () {
+    <script>
+      $(document).ready(function () {
         const table = $('#tabla-ordenes').DataTable({
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json'
-            },
-            dom: 'lrtip' // Esto elimina el search global (LIMPIA la barra por defecto)
+          language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+          },
+          dom: 'lrtip', // Esto elimina el search global (LIMPIA la barra por defecto)
         });
 
         // Crear un input personalizado para la búsqueda por columna "Mesa"
-        const mesaFilter = $('<input type="text" placeholder="Buscar por mesa" class="form-control mb-3" style="max-width: 200px;">');
+        const mesaFilter = $(
+          '<input type="text" placeholder="Buscar por mesa" class="form-control mb-3" style="max-width: 200px;">'
+        );
         mesaFilter.insertBefore('#tabla-ordenes');
 
         mesaFilter.on('keyup change', function () {
-            table.column(1).search(this.value).draw(); // columna 1 = Mesa
+          table.column(1).search(this.value).draw(); // columna 1 = Mesa
         });
-    });
-</script>
-
-</body>
-
+      });
+    </script>
+  </body>
 </html>
