@@ -48,25 +48,10 @@ body {
   height: auto !important ;
 }
 
-<<<<<<< Updated upstream
-.btn-gen {
-  background-color: var(--color-brand-accent )!important;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
+.submenu.active.bg-transparent {
+  background: transparent !important;
 }
 
-.btn-gen:hover {
-  background: rgb(236, 133, 7);
-=======
 /** Btn colors **/
 .btn-brand-primary {
   background-color: var(--color-brand-primary) !important;
@@ -109,5 +94,22 @@ body {
 .btn-brand-dark-inverted:hover {
   box-shadow: 0 50px var(--color-text-primary) inset !important;
   color: var(--color-bg-base) !important;
->>>>>>> Stashed changes
+}
+
+.btn-gen {
+  background-color: var(--color-brand-accent) !important;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+.btn-gen:hover {
+  background: rgb(236, 133, 7);
 }

@@ -31,8 +31,15 @@ const insertHtml = (selector, url, cb) => {
 
       // Marcar como activa la tab del menú
       if (activeSection) {
-        const li = document.querySelector(`li[data-link="${activeSection}"]`);
+        const li = document.querySelector(`[data-link="${activeSection}"]`);
 
+        // Si el tab tiene un submenu, se marca como activo también
+        if (li.hasAttribute('data-submenu')) {
+          const activeSubmenu = target.dataset.submenu;
+          document.querySelector(`#${activeSubmenu}`).classList.add('active');
+        }
+
+        if (li.classList.contains('subdrop')) console.log(target);
         if (li) li.classList.add('active');
       }
 
