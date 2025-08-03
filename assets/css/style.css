@@ -17,7 +17,7 @@
 
   /*! Colores Hover */
   --color-link-hover: #1888be;
-  --color-brand-accent-hover: #E39127;
+  --color-brand-accent-hover: #e39127;
 }
 
 @import '../../../../css2';
@@ -3043,9 +3043,9 @@ div.dataTables_wrapper div.dataTables_info {
   top: 0;
   right: 0;
   left: 0;
--webkit-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.32);
--moz-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.32);
-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.32);
+  -webkit-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.32);
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.32);
 }
 .header:hover .top-nav-search form .form-control {
   border: 1px solid #f1f1f1;
@@ -7191,7 +7191,7 @@ span.select2-container.select2-container--default.select2-container--open {
   overflow: hidden;
 }
 .productset:hover {
-  border: 1px solid #7367f0;
+  border: 1px solid var(--color-brand-primary);
 }
 .productset .check-product {
   display: none;
@@ -7220,6 +7220,7 @@ span.select2-container.select2-container--default.select2-container--open {
 .productset .productsetimg img {
   transition: all 0.5s;
   border-radius: 5px 5px 0 0;
+  height: 250px;
 }
 @media (max-width: 991px) {
   .productset .productsetimg img {
@@ -14419,7 +14420,7 @@ span.select2-container.select2-container--default.select2-container--open {
   flex-direction: column;
 }
 .product-details:hover {
-  background: #7367f0;
+  background: var(--color-link-hover);
 }
 .product-details:hover h6 {
   color: #fff;
@@ -14545,7 +14546,7 @@ span.select2-container.select2-container--default.select2-container--open {
   overflow: hidden;
 }
 .productset:hover {
-  border: 1px solid #7367f0;
+  border: 1px solid var(--color-brand-primary);
 }
 .productset .check-product {
   display: none;
@@ -14627,7 +14628,7 @@ span.select2-container.select2-container--default.select2-container--open {
   width: 100%;
 }
 .tabs_wrapper ul.tabs li.active {
-  background-color: #7367f0;
+  background-color: var(--color-brand-primary);
 }
 .tabs_wrapper ul.tabs li.active .product-details {
   background: 0 0;

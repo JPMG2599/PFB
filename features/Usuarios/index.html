@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Orden</title>
+    <title>Usuarios (Admin)</title>
 
     <link
       rel="shortcut icon"
@@ -52,7 +52,7 @@
       <!-- Nav Menu -->
       <div class="sidebar" id="sidebar">
         <div class="sidebar-inner slimscroll">
-          <div id="sidebar-menu" class="sidebar-menu" data-active="orden"></div>
+          <div id="sidebar-menu" class="sidebar-menu" data-active="users"></div>
         </div>
       </div>
       <!-- End Nav Menu -->
@@ -63,16 +63,16 @@
           <!-- Header -->
           <div class="page-header">
             <div class="page-title">
-              <h4>Órdenes Activas</h4>
-              <h6>Gestiona las órdenes</h6>
+              <h4>Lista Usuarios</h4>
+              <h6>Gestiona los usuarios</h6>
             </div>
             <div class="page-btn">
-              <a href="/features/Ordenes/add.html" class="btn btn-added"
+              <a href="/features/Usuarios/add.html" class="btn btn-added"
                 ><img
                   src="/assets/img/icons/plus.svg"
                   alt="img"
                   class="me-1"
-                />Crear Orden</a
+                />Crear Usuario</a
               >
             </div>
           </div>
@@ -169,10 +169,9 @@
                           <span class="checkmarks"></span>
                         </label>
                       </th>
-                      <th>Número Orden</th>
-                      <th>Número Mesa</th>
-                      <th>Nombre Cliente</th>
-                      <th>Estado</th>
+                      <th>Nombre</th>
+                      <th>Correo</th>
+                      <th>Rol</th>
                       <th class="text-center">Accion</th>
                     </tr>
                   </thead>
@@ -188,12 +187,9 @@
                           <span class="checkmarks"></span>
                         </label>
                       </td>
-                      <td>1</td>
-                      <td>3</td>
-                      <td>María Sanchez</td>
-                      <td>
-                        <span class="badges bg-lightyellow">Pendiente</span>
-                      </td>
+                      <td>Luis Torres</td>
+                      <td>ltorres@pfb.com</td>
+                      <td>Mesero</td>
                       <td class="text-center">
                         <a
                           class="action-set"
@@ -206,30 +202,24 @@
                         <ul class="dropdown-menu">
                           <li>
                             <a
-                              href="javascript:void(0);"
+                              href="/features/Usuarios/historial.html"
                               class="dropdown-item"
-                              data-bs-toggle="modal"
-                              data-bs-target="#showpayment"
-                              ><i
-                                class="me-2 fa fa-check"
-                                data-bs-toggle="tooltip"
-                                title=""
-                                data-bs-original-title="fa fa-check"
-                                aria-label="fa fa-check"
-                                style="color: #6e6b7b"
-                              ></i>
-                              Marcar Entregada</a
+                              ><img
+                                src="/assets/img/icons/eye1.svg"
+                                class="me-2"
+                                alt="img"
+                              />Ver Historial</a
                             >
                           </li>
                           <li>
                             <a
-                              href="/features/Ordenes/edit.html"
+                              href="/features/Usuarios/edit.html"
                               class="dropdown-item"
                               ><img
                                 src="/assets/img/icons/edit.svg"
                                 class="me-2"
                                 alt="img"
-                              />Editar orden</a
+                              />Editar Usuario</a
                             >
                           </li>
                           <li>

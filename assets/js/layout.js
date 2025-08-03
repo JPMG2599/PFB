@@ -1,4 +1,5 @@
-// Busca un selector, inserta el component y elimina el selector
+// Busca un elemento con el selector que se le pase (id, classname), inserta el component (header, sidebar)
+// y elimina el elemento que encontro.
 
 const insertHtml = (selector, url, cb) => {
   const target = document.querySelector(selector);
@@ -8,7 +9,7 @@ const insertHtml = (selector, url, cb) => {
   }
 
   const activeSection = target.dataset.active;
-  const activeHeader = target.dataset.activeHeader;
+  const activeHeader = target.hasAttribute('data-activeheader');
 
   fetch(url)
     .then((res) => res.text())
@@ -23,10 +24,10 @@ const insertHtml = (selector, url, cb) => {
       target.remove();
 
       // Marcar como activo el header para agregar un línea separatoria
-      if (activeHeader) {
-        document.querySelector(`#header[data-active]`).classList.add('active');
-      } else if (!activeHeader)
-        document.querySelector(`.header-left`).classList.add('border-0');
+      if (target.id === 'header')
+        activeHeader
+          ? document.querySelector(`#nheader`).classList.add('active')
+          : document.querySelector(`.header-left`).classList.add('border-0');
 
       // Marcar como activa la tab del menú
       if (activeSection) {
@@ -49,14 +50,17 @@ const loadScript = (src, callback) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Cargar Header
   const headerLoaded = new Promise((resolve) =>
     insertHtml('#header', '/components/header.html', resolve)
   );
 
+  // Cargar Sidebar
   const sidebarLoaded = new Promise((resolve) =>
     insertHtml('#sidebar-menu', '/components/sidebar.html', resolve)
   );
 
+  // Cargar JS Script
   Promise.all([headerLoaded, sidebarLoaded]).then(() =>
     loadScript('/assets/js/script.js')
   );

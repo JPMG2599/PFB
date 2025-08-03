@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Orden</title>
+    <title>Orden (Admin)</title>
 
     <link
       rel="shortcut icon"
@@ -52,7 +52,11 @@
       <!-- Nav Menu -->
       <div class="sidebar" id="sidebar">
         <div class="sidebar-inner slimscroll">
-          <div id="sidebar-menu" class="sidebar-menu" data-active="orden"></div>
+          <div
+            id="sidebar-menu"
+            class="sidebar-menu"
+            data-active="orden-admin"
+          ></div>
         </div>
       </div>
       <!-- End Nav Menu -->
@@ -63,17 +67,8 @@
           <!-- Header -->
           <div class="page-header">
             <div class="page-title">
-              <h4>Órdenes Activas</h4>
+              <h4>Historial de Órdenes</h4>
               <h6>Gestiona las órdenes</h6>
-            </div>
-            <div class="page-btn">
-              <a href="/features/Ordenes/add.html" class="btn btn-added"
-                ><img
-                  src="/assets/img/icons/plus.svg"
-                  alt="img"
-                  class="me-1"
-                />Crear Orden</a
-              >
             </div>
           </div>
           <!-- End Header -->
@@ -170,9 +165,9 @@
                         </label>
                       </th>
                       <th>Número Orden</th>
-                      <th>Número Mesa</th>
                       <th>Nombre Cliente</th>
-                      <th>Estado</th>
+                      <th>Mesero</th>
+                      <th>Fecha Creación</th>
                       <th class="text-center">Accion</th>
                     </tr>
                   </thead>
@@ -189,11 +184,9 @@
                         </label>
                       </td>
                       <td>1</td>
-                      <td>3</td>
                       <td>María Sanchez</td>
-                      <td>
-                        <span class="badges bg-lightyellow">Pendiente</span>
-                      </td>
+                      <td>Luis Torres</td>
+                      <td>2025-08-02</td>
                       <td class="text-center">
                         <a
                           class="action-set"
@@ -206,41 +199,13 @@
                         <ul class="dropdown-menu">
                           <li>
                             <a
-                              href="javascript:void(0);"
-                              class="dropdown-item"
-                              data-bs-toggle="modal"
-                              data-bs-target="#showpayment"
-                              ><i
-                                class="me-2 fa fa-check"
-                                data-bs-toggle="tooltip"
-                                title=""
-                                data-bs-original-title="fa fa-check"
-                                aria-label="fa fa-check"
-                                style="color: #6e6b7b"
-                              ></i>
-                              Marcar Entregada</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/features/Ordenes/edit.html"
+                              href="/features/Ordenes/historial.html"
                               class="dropdown-item"
                               ><img
-                                src="/assets/img/icons/edit.svg"
+                                src="/assets/img/icons/eye1.svg"
                                 class="me-2"
                                 alt="img"
-                              />Editar orden</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="javascript:void(0);"
-                              class="dropdown-item confirm-text"
-                              ><img
-                                src="/assets/img/icons/delete1.svg"
-                                class="me-2"
-                                alt="img"
-                              />Eliminar</a
+                              />Ver Historial</a
                             >
                           </li>
                         </ul>

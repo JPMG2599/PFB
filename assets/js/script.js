@@ -297,9 +297,13 @@ $(document).ready(function () {
   $(document).on('click', '#filter_search', function () {
     $('#filter_search').toggleClass('setclose');
   });
+
+  /* Active Product Cards
   $(document).on('click', '.productset', function () {
     $(this).toggleClass('active');
   });
+  */
+
   $('.inc.button').click(function () {
     var $this = $(this),
       $input = $this.prev('input'),
