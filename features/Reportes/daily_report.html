@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Reporte consolidado</title>
+    <title>Reporte diario</title>
 
     <link
       rel="shortcut icon"
@@ -57,22 +57,21 @@
             id="sidebar-menu"
             class="sidebar-menu"
             data-active="reportes"
-            data-submenu="consolidado"
+            data-submenu="daily_report"
           ></div>
         </div>
       </div>
-      <!-- End Nav Menu -->
 
+      <!-- End Nav Menu -->
       <!-- Page Content -->
       <div class="page-wrapper">
         <div class="content">
           <!-- Header -->
           <div class="page-header">
             <div class="page-title">
-              <h4>Reporte Consolidado</h4>
-              <h6>Rendimiento del restaurante por rango de fechas</h6>
+              <h4>Reporte Diario</h4>
+              <h6>Resumen financiero del turno</h6>
             </div>
-
             <div class="page-btn">
               <a href="#" class="btn btn-added">
                 <img src="/assets/img/icons/plus.svg" alt="img" class="me-1" />
@@ -83,26 +82,12 @@
           <!-- End Header -->
 
           <!-- Table Top -->
+
           <div class="card">
             <div class="card-body">
               <!-- Top right (PDF, Excel, Print)-->
               <div class="table-top">
-                <div class="search-set">
-                  <div class="search-path">
-                    <a class="btn btn-filter" id="filter_search">
-                      <img src="/assets/img/icons/filter.svg" alt="img" />
-                      <span
-                        ><img src="/assets/img/icons/closes.svg" alt="img"
-                      /></span>
-                    </a>
-                  </div>
-                  <div class="search-input">
-                    <a class="btn btn-searchset"
-                      ><img src="/assets/img/icons/search-white.svg" alt="img"
-                    /></a>
-                  </div>
-                </div>
-
+                <div class=""></div>
                 <div class="wordset">
                   <ul>
                     <li>
@@ -132,84 +117,91 @@
                   </ul>
                 </div>
               </div>
-              <!-- Filters -->
-              <div class="card" id="filter_inputs">
-                <div class="card-body pb-0">
-                  <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label>Fecha inicio</label>
-                        <input type="date" class="form-control" />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-12">
-                      <div class="form-group">
-                        <label>Fecha final</label>
-                        <input type="date" class="form-control" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Tabla de métricas -->
 
               <table class="table table-bordered">
                 <thead>
                   <tr>
+                    <th>Fecha</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Cierre</th>
                     <th>Total Ingresos</th>
                     <th>Total Egresos</th>
-                    <th>Órdenes Completadas</th>
-                    <th>Efectivo</th>
-                    <th>Tarjeta</th>
-                    <th>SINPE</th>
+                    <th>Saldo Final</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>₡850.000</td>
-                    <td>₡120.000</td>
-                    <td>75</td>
-                    <td>₡400.000</td>
-                    <td>₡300.000</td>
-                    <td>₡150.000</td>
+                    <td>02/08/2025</td>
+                    <td>08:00 am</td>
+                    <td>04:00 pm</td>
+                    <td>₡230.000</td>
+                    <td>₡45.000</td>
+                    <td><strong>₡185.000</strong></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
+
+          <!-- Tabla de desglose por método de pago -->
+          <div class="card">
+            <div class="card-body">
+              <h5>Desglose por Método de Pago</h5>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Método</th>
+                    <th>Monto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Efectivo</td>
+                    <td>₡120.000</td>
+                  </tr>
+                  <tr>
+                    <td>Tarjeta</td>
+                    <td>₡80.000</td>
+                  </tr>
+                  <tr>
+                    <td>SINPE</td>
+                    <td>₡30.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Script to load components -->
+          <script src="/assets/js/layout.js" defer></script>
+
+          <script src="/assets/js/jquery-3.6.0.min.js"></script>
+
+          <script src="/assets/js/feather.min.js"></script>
+
+          <script src="/assets/js/jquery.slimscroll.min.js"></script>
+
+          <script src="/assets/js/jquery.dataTables.min.js"></script>
+          <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+
+          <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+          <script src="/assets/plugins/select2/js/select2.min.js"></script>
+
+          <script src="/assets/js/moment.min.js"></script>
+          <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+          <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+          <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+            integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+          />
         </div>
       </div>
     </div>
-    <!-- End Page Content -->
-
-    <!-- Script to load components -->
-    <script src="/assets/js/layout.js" defer></script>
-
-    <script src="/assets/js/jquery-3.6.0.min.js"></script>
-
-    <script src="/assets/js/feather.min.js"></script>
-
-    <script src="/assets/js/jquery.slimscroll.min.js"></script>
-
-    <script src="/assets/js/jquery.dataTables.min.js"></script>
-    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
-
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="/assets/plugins/select2/js/select2.min.js"></script>
-
-    <script src="/assets/js/moment.min.js"></script>
-    <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
   </body>
 </html>
