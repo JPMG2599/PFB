@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dreams Pos admin template</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.jpg">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/animate.css">
+
+    <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <div id="header" data-activeHeader></div>
+        <!-- End header-->
+
+        <!-- Nav Menu -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu" data-active="cocina"></div>
+            </div>
+        </div>
+        <!-- End Nav Menu -->
+
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h4>Monitor de Pedidos</h4>
+                            <small>Órdenes pendientes en cocina</small>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="kitchen-orders">
+
+                        <!-- Card de orden -->
+                        <div class="col-md-6 col-lg-3 d-flex order-card" data-fecha="2025-08-01T10:20:00"
+                            data-estado="pendiente">
+                            <div class="card flex-fill bg-white border-left-primary">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Orden #1</h5>
+                                    <span class="badge bg-warning estado">Pendiente</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Cliente:</strong> Camila Mora</p>
+                                    <p><strong>Mesa:</strong> 2</p>
+                                    <p><strong>Hora:</strong> 10:20 AM</p>
+                                    <p><strong>Observaciones:</strong> Sin cebolla en la hamburguesa, bebida con hielo.
+                                    </p>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">2x Hamburguesa Doble</li>
+                                        <li class="list-group-item">1x Papas medianas</li>
+                                        <li class="list-group-item">2x Refresco natural</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-end botones-acciones">
+                                    <button class="btn btn-success btn-sm iniciar">Iniciar Preparación</button>
+                                    <button class="btn btn-danger btn-sm rechazar">Rechazar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card de orden -->
+                        <div class="col-md-6 col-lg-3 d-flex order-card" data-fecha="2025-08-01T10:20:00"
+                            data-estado="pendiente">
+                            <div class="card flex-fill bg-white border-left-primary">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Orden #2</h5>
+                                    <span class="badge bg-warning estado">Pendiente</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Cliente:</strong> Josue Rodriguez</p>
+                                    <p><strong>Mesa:</strong> 5</p>
+                                    <p><strong>Hora:</strong> 10:25 AM</p>
+                                    <p><strong>Observaciones:</strong> N/A </p>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">2x Hamburguesa Clásica</li>
+                                        <li class="list-group-item">1x Papas grandes</li>
+                                        <li class="list-group-item">2x Refresco natural</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-end botones-acciones">
+                                    <button class="btn btn-success btn-sm iniciar">Iniciar Preparación</button>
+                                    <button class="btn btn-danger btn-sm rechazar">Rechazar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card de orden -->
+                        <div class="col-md-6 col-lg-3 d-flex order-card" data-fecha="2025-08-01T10:20:00"
+                            data-estado="pendiente">
+                            <div class="card flex-fill bg-white border-left-primary">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Orden #3</h5>
+                                    <span class="badge bg-warning estado">Pendiente</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Cliente:</strong> Maria Brenes</p>
+                                    <p><strong>Mesa:</strong> 3</p>
+                                    <p><strong>Hora:</strong> 10:45 AM</p>
+                                    <p><strong>Observaciones:</strong> Bebidas sin hielo.</p>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">2x Chifrijo</li>
+                                        <li class="list-group-item">1x Arroz con pollo</li>
+                                        <li class="list-group-item">1x Coca Cola</li>
+                                        <li class="list-group-item">1x Coca Cola Zero</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-end botones-acciones">
+                                    <button class="btn btn-success btn-sm iniciar">Iniciar Preparación</button>
+                                    <button class="btn btn-danger btn-sm rechazar">Rechazar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card de orden -->
+                        <div class="col-md-6 col-lg-3 d-flex order-card" data-fecha="2025-08-01T10:20:00"
+                            data-estado="pendiente">
+                            <div class="card flex-fill bg-white border-left-primary">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Orden #4</h5>
+                                    <span class="badge bg-warning estado">Pendiente</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Cliente:</strong> Fabian Blanco</p>
+                                    <p><strong>Mesa:</strong> 6</p>
+                                    <p><strong>Hora:</strong> 11:05 AM</p>
+                                    <p><strong>Observaciones:</strong> N/A</p>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">3x Refresco natural</li>
+                                        <li class="list-group-item">1x Casado de pescado</li>
+                                        <li class="list-group-item">1x Chifrijo</li>
+                                        <li class="list-group-item">1x Casado de pollo</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-end botones-acciones">
+                                    <button class="btn btn-success btn-sm iniciar">Iniciar Preparación</button>
+                                    <button class="btn btn-danger btn-sm rechazar">Rechazar</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Tablas -->
+                    <div class="row">
+                        <!-- Ordenes Listas -->
+                        <div class="mt-5">
+                            <div class="page-header">
+                                <div class="page-title">
+                                    <h4>Órdenes Listas</h4>
+                                </div>
+                            </div>
+                            <table class="table table-bordered" id="tabla-listas">
+                                <thead>
+                                    <tr>
+                                        <th>#Orden</th>
+                                        <th>Cliente</th>
+                                        <th>Mesa</th>
+                                        <th>Hora</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+
+                        <!-- Ordenes Rechazadas -->
+                        <div class="mt-5">
+                            <div class="page-header">
+                                <div class="page-title">
+                                    <h4>Órdenes Rechazadas</h4>
+                                </div>
+                            </div>
+                            <table class="table table-bordered" id="tabla-rechazadas">
+                                <thead>
+                                    <tr>
+                                        <th>#Orden</th>
+                                        <th>Cliente</th>
+                                        <th>Mesa</th>
+                                        <th>Hora</th>
+                                        <th>Motivo</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="/assets/js/feather.min.js"></script>
+
+    <script src="/assets/js/jquery.slimscroll.min.js"></script>
+
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="/assets/plugins/apexchart/chart-data.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/cocina.js"></script>
+
+</body>
+
+</html>
