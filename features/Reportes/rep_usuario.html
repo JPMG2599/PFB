@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive" />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Reporte usuario</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.jpg" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+
+    <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css" />
+
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"></div>
+    </div>
+
+    <div class="main-wrapper">
+        <!-- Header -->
+        <div id="header" data-activeHeader></div>
+        <!-- End header-->
+
+        <!-- Nav Menu -->
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu" data-active="reporte"></div>
+            </div>
+        </div>
+
+        <!-- End Nav Menu -->
+        <!-- Page Content -->
+        <div class="page-wrapper">
+            <div class="content">
+                <!-- Header -->
+                <div class="page-header">
+                    <div class="page-title">
+                        <h4>Reporte de Desempeño</h4>
+                        <h6>Evaluación por usuario y rol durante un periodo específico</h6>
+                    </div>
+
+                    <div class="page-btn">
+                        <a href="#" class="btn btn-added">
+                            <img src="/assets/img/icons/plus.svg" alt="img" class="me-1" />
+                            Generar Reporte
+                        </a>
+                    </div>
+                </div>
+                <!-- End Header -->
+                <!-- Table Top -->
+
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Top right (PDF, Excel, Print)-->
+                        <div class="table-top">
+                            <div class="search-set">
+                                <div class="search-path">
+                                    <a class="btn btn-filter" id="filter_search">
+                                        <img src="/assets/img/icons/filter.svg" alt="img" />
+                                        <span><img src="/assets/img/icons/closes.svg" alt="img" /></span>
+                                    </a>
+                                </div>
+                                <div class="search-input">
+                                    <a class="btn btn-searchset"><img src="/assets/img/icons/search-white.svg"
+                                            alt="img" /></a>
+                                </div>
+                            </div>
+                            <div class="wordset">
+                                <ul>
+                                    <li>
+                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img
+                                                src="/assets/img/icons/pdf.svg" alt="img" /></a>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
+                                                src="/assets/img/icons/excel.svg" alt="img" /></a>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img
+                                                src="/assets/img/icons/printer.svg" alt="img" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Filters -->
+                        <div class="card" id="filter_inputs">
+                            <div class="card-body pb-0">
+                                <div class="row">
+                                    <!-- Rol -->
+                                    <div class="col-lg-3 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label>Rol</label>
+                                            <select class="form-control">
+                                                <option>Cocinero</option>
+                                                <option>Mesero</option>
+                                                <option>Cajero</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Usuario -->
+                                    <div class="col-lg-3 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label>Usuario</label>
+                                            <select class="form-control">
+                                                <option>Juan Pérez</option>
+                                                <option>Karol Vargas</option>
+                                                <option>Marco Rodríguez</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Fecha Inicio -->
+                                    <div class="col-lg-3 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label>Fecha Inicio</label>
+                                            <input type="date" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Fecha Final -->
+                                    <div class="col-lg-3 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label>Fecha Final</label>
+                                            <input type="date" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- Tabla de dinámicas según rol Cocinero-->
+                         <h4>Cocinero:</h4>
+                        <table class="table table-bordered mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Órdenes Preparadas</th>
+                                    <th>Tiempo Promedio (min)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Papas Fritas</td>
+                                    <td>35</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>Hamburguesas</td>
+                                    <td>52</td>
+                                    <td>15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Tabla de dinámicas según rol Mesero-->
+                         <h4>Mesero:</h4>
+                        <table class="table table-bordered mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Órdenes Atendidas</th>
+                                    <th>Total Vendido</th>
+                                    <th>Tiempo Promedio Atención</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>75</td>
+                                    <td>₡285.000</td>
+                                    <td>7 min</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Tabla de dinámicas según rol Cajero-->
+                         <h4>Cajero:</h4>
+                        <table class="table table-bordered mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Órdenes Cobradas</th>
+                                    <th>Total Recibido</th>
+                                    <th>Pagos Efectivo</th>
+                                    <th>Pagos SINPE</th>
+                                    <th>Pagos Tarjeta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>65</td>
+                                    <td>₡310.000</td>
+                                    <td>₡120.000</td>
+                                    <td>₡90.000</td>
+                                    <td>₡100.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- End Page Content -->
+
+  <!-- Script to load components -->
+    <script src="/assets/js/layout.js" defer></script>
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="/assets/js/feather.min.js"></script>
+
+    <script src="/assets/js/jquery.slimscroll.min.js"></script>
+
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="/assets/js/moment.min.js"></script>
+    <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </body>
+</html>

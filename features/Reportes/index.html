@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive" />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Reporte diario</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.jpg" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+
+    <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css" />
+
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"></div>
+    </div>
+
+    <div class="main-wrapper">
+        <!-- Header -->
+        <div id="header" data-activeHeader></div>
+        <!-- End header-->
+
+        <!-- Nav Menu -->
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu" data-active="reporte"></div>
+            </div>
+        </div>
+
+        <!-- End Nav Menu -->
+        <!-- Page Content -->
+        <div class="page-wrapper">
+            <div class="content">
+                <!-- Header -->
+                <div class="page-header">
+                    <div class="page-title">
+                        <h4>Reporte Diario</h4>
+                        <h6>Resumen financiero del turno</h6>
+                    </div>
+                    <div class="page-btn">
+                        <a href="#" class="btn btn-added">
+                            <img src="/assets/img/icons/plus.svg" alt="img" class="me-1" />
+                            Generar Reporte
+                        </a>
+                    </div>
+                </div>
+                <!-- End Header -->
+
+                <!-- Table Top -->
+
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Top right (PDF, Excel, Print)-->
+                        <div class="table-top">
+                            <div class="">
+                            </div>
+                            <div class="wordset">
+                                <ul>
+                                    <li>
+                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img
+                                                src="/assets/img/icons/pdf.svg" alt="img" /></a>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
+                                                src="/assets/img/icons/excel.svg" alt="img" /></a>
+                                    </li>
+                                    <li>
+                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img
+                                                src="/assets/img/icons/printer.svg" alt="img" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Hora Inicio</th>
+                                    <th>Hora Cierre</th>
+                                    <th>Total Ingresos</th>
+                                    <th>Total Egresos</th>
+                                    <th>Saldo Final</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>02/08/2025</td>
+                                    <td>08:00 am</td>
+                                    <td>04:00 pm</td>
+                                    <td>₡230.000</td>
+                                    <td>₡45.000</td>
+                                    <td><strong>₡185.000</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tabla de desglose por método de pago -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Desglose por Método de Pago</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Método</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Efectivo</td>
+                                    <td>₡120.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Tarjeta</td>
+                                    <td>₡80.000</td>
+                                </tr>
+                                <tr>
+                                    <td>SINPE</td>
+                                    <td>₡30.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Script to load components -->
+                <script src="/assets/js/layout.js" defer></script>
+
+                <script src="/assets/js/jquery-3.6.0.min.js"></script>
+
+                <script src="/assets/js/feather.min.js"></script>
+
+                <script src="/assets/js/jquery.slimscroll.min.js"></script>
+
+                <script src="/assets/js/jquery.dataTables.min.js"></script>
+                <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+
+                <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+                <script src="/assets/plugins/select2/js/select2.min.js"></script>
+
+                <script src="/assets/js/moment.min.js"></script>
+                <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+                <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+                <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+                
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+                    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+
+</html>
