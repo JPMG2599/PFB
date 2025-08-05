@@ -66,6 +66,28 @@
       .order-item input[type='checkbox'] {
         margin-right: 10px;
       }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+
+        body * {
+          visibility: hidden;
+        }
+
+        #facturaModal,
+        #facturaModal * {
+          visibility: visible;
+        }
+
+        #facturaModal {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
     </style>
   </head>
 
@@ -238,7 +260,9 @@
                   <div id="infoFactura" class="mt-2 text-secondary"></div>
                 </div>
                 <div class="modal-body" id="facturaContenido"></div>
-                <div class="modal-footer d-flex justify-content-between">
+                <div
+                  class="modal-footer d-flex justify-content-between no-print"
+                >
                   <button
                     type="button"
                     class="btn btn-secondary"
@@ -246,7 +270,11 @@
                   >
                     Cerrar
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <button
+                    type="button"
+                    onclick="window.print()"
+                    class="btn btn-primary"
+                  >
                     Imprimir Factura
                   </button>
                 </div>
@@ -261,6 +289,20 @@
       document
         .getElementById('checkout')
         .addEventListener('click', function () {
+          const metodo = document.getElementById('paymentMethod').value;
+          const totalValidacion = document.getElementById('total').textContent;
+
+          if (metodo === 'seleccione') {
+            alert('Por favor seleccione un método de pago antes de continuar.');
+            return;
+          }
+
+          if (totalValidacion === '₡0') {
+            alert(
+              'No se puede realizar el pago porque el total de la orden es 0.'
+            );
+            return;
+          }
           // Mostrar mensaje
           alert('✅ Pago completado con éxito');
 
@@ -290,14 +332,13 @@
                   )}</p>
                   <p><strong>Total:</strong> ₡${total.toFixed(2)}</p>`;
 
-          // 🔢 Número de factura aleatorio
           const numeroFactura = Math.floor(100000 + Math.random() * 900000);
 
-          // 📅 Fecha actual
           const fecha = new Date().toLocaleString('es-CR');
 
-          // 🍽 Mesa seleccionada
           const mesa = 3;
+
+          const cajero = 'Jairell Bonilla';
 
           // Insertar info en el encabezado de la factura
           document.getElementById('infoFactura').innerHTML = `
@@ -482,7 +523,5 @@
 
     <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
-</body>
-
-
+  </body>
 </html>
